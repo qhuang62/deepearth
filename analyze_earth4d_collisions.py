@@ -3,11 +3,9 @@
 Earth4D Hash Collision Analysis with LFMC Data
 ==================================================
 
-This script performs ACTUAL collision tracking by instrumenting the Earth4D
-hash encoding process, not simulation. It extracts collision statistics
-from the actual hash encoders during forward passes.
+This script performs collision tracking by instrumenting the Earth4D hash encoding process. It extracts collision statistics
+from the hash encoders during forward passes.
 
-This provides the true collision analysis that Lance requested for the AAG 2026 paper.
 """
 
 import sys
@@ -43,8 +41,8 @@ class CollisionTracker:
         
     def analyze_hash_encoder_collisions(self, encoder, coords, encoder_name):
         """
-        Analyze actual hash collisions in a single encoder by examining
-        the hash encoding process at each level.
+        Analyze actual hash collisions in a single encoder by examining the hash encoding process at each level.
+        
         """
         print(f"\nAnalyzing {encoder_name} encoder collisions...")
         
@@ -354,7 +352,9 @@ def main():
     print(f"Using device: {device}")
     
     # Load LFMC data (subset for analysis)
-    coords_xyzt, df_lfmc = load_lfmc_data(max_samples=5000)  # Use 5K for detailed analysis
+    #coords_xyzt, df_lfmc = load_lfmc_data(max_samples=5000)  # Use 5K for first-step analysis
+    coords_xyzt, df_lfmc = load_lfmc_data(max_samples=None)  # Use full dataset
+    
     coords_xyzt = coords_xyzt.to(device)
     
     # Initialize Earth4D model (no verbose output for cleaner logs)
