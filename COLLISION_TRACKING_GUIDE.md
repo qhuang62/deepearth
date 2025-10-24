@@ -1,8 +1,8 @@
-# Earth4D Collision Tracking - Complete Setup and Usage Guide
+# Earth4D Collision Analysis - Setup and Usage Guide
 
 ## Overview
 
-This guide provides step-by-step instructions for setting up and using the Earth4D collision tracking system for comprehensive hash collision analysis across all 4 grid spaces (xyz, xyt, yzt, xzt).
+This guide provides instructions for running Earth4D hash collision analysis using real LFMC data. The analysis examines collision patterns across all 4 grid spaces (xyz, xyt, yzt, xzt) using the working `analyze_earth4d_collisions.py` implementation.
 
 ## Prerequisites
 
@@ -27,149 +27,112 @@ nvidia-smi
 python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
 ```
 
-### Step 2: Compile the Collision Tracking CUDA Extension
+### Step 2: Verify Earth4D Installation
 ```bash
 cd encoders/xyzt/hashencoder
-python setup_with_tracking.py build_ext --inplace
+# Ensure the original CUDA extension is compiled
+ls hashencoder_cuda.so
 ```
 
-**Expected Output:**
-```
-Compiling for CUDA architecture: 75
-running build_ext
-building 'hashencoder_cuda_tracking' extension
-...
-creating hashencoder_cuda_tracking.cpython-310-x86_64-linux-gnu.so
-```
-
-### Step 3: Verify Installation
-```bash
-python -c "from hashencoder.hashgrid_with_tracking import HashEncoderWithTracking; print('✓ Installation successful')"
-```
-
-### Step 4: Run Real Collision Analysis
+### Step 3: Run Collision Analysis
 ```bash
 cd ../../..  # Back to deepearth root
 python analyze_earth4d_collisions.py
 ```
 
-## Testing and Validation
+## Running the Analysis
 
-### Real Earth4D Collision Analysis
+### Basic Collision Analysis
 ```bash
 # Run complete collision analysis on LFMC dataset
 python analyze_earth4d_collisions.py
 ```
 
-### Custom Dataset Test
+### Custom Dataset Analysis
 ```bash
-# Test with your own coordinates CSV by modifying analyze_earth4d_collisions.py
-# Update the script to load your dataset instead of LFMC data
+# To use your own dataset, modify analyze_earth4d_collisions.py:
+# 1. Update the data_path in load_lfmc_data() function
+# 2. Ensure your CSV has columns: latitude, longitude, elevation, time
+# 3. Run the script normally
+python analyze_earth4d_collisions.py
 ```
 
 ## Usage Examples
 
-### Basic Collision Tracking
+### Understanding the Analysis Script
 ```python
-from encoders.xyzt.earth4d_with_tracking import Earth4DWithCollisionTracking, CollisionTrackingConfig
+# The analyze_earth4d_collisions.py script works as follows:
+
+from encoders.xyzt.earth4d import Earth4D
 import torch
 
-# Configure collision tracking
-config = CollisionTrackingConfig(
-    enabled=True,
-    max_examples=100000,
-    track_coordinates=True,
-    export_csv=True,
-    export_json=True,
-    output_dir="./collision_analysis"
-)
-
-# Initialize Earth4D with collision tracking
-earth4d = Earth4DWithCollisionTracking(
-    collision_config=config,
-    spatial_levels=24,      # Full planetary resolution
-    temporal_levels=19,     # 200-year temporal coverage
-    verbose=True
-)
-
-# Move to GPU
+# 1. Initialize standard Earth4D (uses working CUDA extension)
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-earth4d = earth4d.to(device)
+earth4d = Earth4D(verbose=False).to(device)
 
-# Example coordinates: [latitude, longitude, elevation_m, time_normalized]
-coordinates = torch.tensor([
-    [40.7128, -74.0060, 100, 0.5],  # New York, year 2000
-    [51.5074, -0.1278, 50, 0.75],   # London, year 2050
-    [35.6762, 139.6503, 20, 0.25],  # Tokyo, year 1950
-], device=device)
+# 2. Load LFMC dataset
+coords_xyzt = load_lfmc_data('globe_lfmc_extracted.csv', max_samples=5000)
 
-# Forward pass with collision tracking
-features = earth4d(coordinates, track_collisions=True)
-print(f"Output features shape: {features.shape}")  # [3, 162]
+# 3. Create collision tracker that analyzes hash patterns
+tracker = CollisionTracker(earth4d)
 
-# Get collision statistics
-stats = earth4d.get_collision_statistics()
-print(f"Collision rates by grid:")
-for grid_name, grid_stats in stats['grid_statistics'].items():
-    if 'collision_analysis' in grid_stats:
-        rate = grid_stats['collision_analysis']['overall_collision_rate']
-        print(f"  {grid_name.upper()}: {rate:.1%}")
+# 4. Run collision analysis across all 4 grids
+collision_stats = tracker.analyze_all_encoders(coords_xyzt)
 
-# Export comprehensive analysis
-earth4d.export_collision_analysis("./my_collision_analysis")
+# 5. Export results
+# - CSV: lfmc_collision_analysis/earth4d_collision_analysis.csv
+# - PNG: lfmc_collision_analysis/earth4d_collision_visualization.png
 ```
 
-### Batch Processing Large Datasets
+### Modifying the Analysis
 ```python
-import pandas as pd
+# To analyze different datasets or parameters, edit analyze_earth4d_collisions.py:
 
-# Load your dataset
-df = pd.read_csv('your_coordinates.csv')
-coordinates = torch.tensor(df[['lat', 'lon', 'elev', 'time']].values, dtype=torch.float32)
+# 1. Change dataset size:
+coords_xyzt = load_lfmc_data('your_dataset.csv', max_samples=10000)
 
-# Process in batches
-batch_size = 1000
-total_examples = len(coordinates)
+# 2. Modify Earth4D configuration:
+earth4d = Earth4D(
+    spatial_levels=24,      # Spatial resolution levels
+    temporal_levels=19,     # Temporal resolution levels
+    verbose=True           # Enable detailed output
+)
 
-print(f"Processing {total_examples:,} examples in batches of {batch_size:,}")
+# 3. Change output directory:
+output_dir = "./custom_collision_analysis"
 
-for i in range(0, total_examples, batch_size):
-    batch_end = min(i + batch_size, total_examples)
-    batch_coords = coordinates[i:batch_end].to(device)
-    
-    # Process batch
-    features = earth4d(batch_coords)
-    
-    if (i // batch_size + 1) % 100 == 0:
-        print(f"Processed {batch_end:,} / {total_examples:,} examples")
-
-# Print final statistics
-earth4d.print_collision_summary()
+# 4. The script automatically processes data in batches and
+#    generates collision statistics for all 4 grids (xyz, xyt, yzt, xzt)
 ```
 
-### Advanced Configuration
-```python
-# High-resolution configuration for detailed analysis
-config = CollisionTrackingConfig(
-    enabled=True,
-    max_examples=1_000_000,    # Track 1M examples
-    track_coordinates=True,
-    export_csv=True,
-    export_json=True,
-    output_dir="./detailed_analysis"
-)
+### Expected Output
+```
+================================================================================
+EARTH4D COLLISION ANALYSIS - LFMC DATASET
+================================================================================
+Analyzing 5,000 LFMC coordinates
 
-# Custom Earth4D configuration
-earth4d = Earth4DWithCollisionTracking(
-    collision_config=config,
-    spatial_levels=28,                    # Higher resolution (0.006m)
-    temporal_levels=24,                   # Higher temporal resolution (3.2 min)
-    spatial_log2_hashmap_size=24,         # 16M entries (4GB)
-    temporal_log2_hashmap_size=20,        # 1M entries
-    features_per_level=2,
-    growth_factor=2.0,
-    verbose=True
-)
+Analyzing xyz encoder collisions...
+Analyzing xyt encoder collisions...
+Analyzing yzt encoder collisions...
+Analyzing xzt encoder collisions...
+
+================================================================================
+COLLISION ANALYSIS SUMMARY
+================================================================================
+Dataset: 5,000 LFMC coordinates
+Total encoders analyzed: 4 (xyz, xyt, yzt, xzt)
+Total levels analyzed: 81
+
+XYZ Encoder:
+  Levels analyzed: 24
+  Levels with hash collisions: 20
+  Average collision rate: 96.9%
+  Maximum collision rate: 99.8%
+
+Files generated:
+  - lfmc_collision_analysis/earth4d_collision_analysis.csv
+  - lfmc_collision_analysis/earth4d_collision_visualization.png
 ```
 
 ## Analysis and Visualization
@@ -239,37 +202,35 @@ export TORCH_CUDA_ARCH_LIST="7.5;8.0;8.6"
 
 **2. Out of Memory Errors**
 ```python
-# Solution: Reduce batch size or max_examples
-config = CollisionTrackingConfig(
-    enabled=True,
-    max_examples=50000,  # Reduce from 1M
-    ...
-)
+# Solution: Reduce dataset size in analyze_earth4d_collisions.py
+# Edit line ~380:
+coords_xyzt = load_lfmc_data('globe_lfmc_extracted.csv', max_samples=1000)
 
-# Or use smaller model configuration
-earth4d = Earth4DWithCollisionTracking(
+# Or use smaller Earth4D configuration:
+earth4d = Earth4D(
     spatial_levels=20,        # Reduce from 24
     temporal_levels=16,       # Reduce from 19
-    collision_config=config
+    verbose=False
 )
 ```
 
 **3. Import Errors**
 ```bash
-# Solution: Check Python path
-export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+# Solution: Ensure you're in the correct directory
+cd /path/to/deepearth
+python analyze_earth4d_collisions.py
 
-# Or add path in script
-import sys
-import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'encoders/xyzt'))
+# Or check if Earth4D can be imported:
+python -c "from encoders.xyzt.earth4d import Earth4D; print('✓ Earth4D available')"
 ```
 
 **4. Slow Performance**
-```python
-# Solution: Use mixed precision and larger batches
-earth4d = earth4d.half()  # Use FP16
-batch_size = 5000         # Increase batch size
+```bash
+# Solution: Ensure CUDA is being used
+python -c "import torch; print(f'CUDA devices: {torch.cuda.device_count()}')"
+
+# Or reduce dataset size for faster testing:
+# Edit analyze_earth4d_collisions.py to use max_samples=1000
 ```
 
 ### Debug Mode
@@ -280,24 +241,34 @@ CUDA_LAUNCH_BLOCKING=1 python analyze_earth4d_collisions.py
 
 ## Expected Results
 
-### Memory Usage
-- **1M examples**: ~486 MB (within 552 MB target)
-- **Grid tracking**: ~150 MB per grid space
-- **Coordinate tracking**: ~32 MB for 1M examples
-
 ### Performance
-- **Regular Earth4D**: ~10,000 examples/second
-- **With collision tracking**: ~8,000 examples/second (20% overhead)
-- **Export**: ~100,000 examples exported in CSV format
+- **Analysis speed**: ~2-3 minutes for 5,000 LFMC coordinates
+- **Memory usage**: Standard Earth4D GPU memory requirements
+- **Output files**: CSV (~2MB) and PNG visualization (~500KB)
 
-### Collision Rates (Typical)
-- **XYZ Grid**: 15-25% (higher at fine levels)
-- **Temporal Grids**: 10-20% (varies by temporal distribution)
-- **Fine levels (L20+)**: 50-90% collision rates (expected due to hash table size)
+### Collision Rates (LFMC Dataset Results)
+- **XYZ Grid**: ~96.9% average collision rate
+- **XYT Grid**: ~86.9% average collision rate  
+- **YZT Grid**: ~85.4% average collision rate
+- **XZT Grid**: ~86.6% average collision rate
 
+## Key Files
+
+### Main Analysis Script
+- **`analyze_earth4d_collisions.py`** - Complete working collision analysis implementation
+
+### Documentation  
+- **`EARTH4D_GRID_DOCUMENTATION.md`** - Technical specifications of Earth4D's 4 grid spaces
+- **`COLLISION_TRACKING_GUIDE.md`** - This usage guide
+
+### Required Data
+- **`globe_lfmc_extracted.csv`** - LFMC dataset for collision analysis
+
+### Output Files
+- **`lfmc_collision_analysis/earth4d_collision_analysis.csv`** - Detailed collision statistics
+- **`lfmc_collision_analysis/earth4d_collision_visualization.png`** - Analysis plots
 
 ## References
 
-- [Earth4D Documentation](./encoders/xyzt/README.md)
 - [NVIDIA InstantNGP](https://github.com/NVlabs/instant-ngp)
 - [Hash Collision Analysis Theory](./EARTH4D_GRID_DOCUMENTATION.md)
