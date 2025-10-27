@@ -19,7 +19,7 @@ from .backend import _backend
 
 class _hash_encode(Function):
     @staticmethod
-    @custom_fwd(cast_inputs=torch.half, device_type='cuda')
+    @custom_fwd(cast_inputs=torch.half)
     def forward(ctx, inputs, embeddings, offsets, per_level_scale, base_resolution, calc_grad_inputs=False, track_collisions=False, collision_indices=None, example_offset=0, max_tracked_examples=0):
         # inputs: [B, D], float in [0, 1]
         # embeddings: [sO, C], float
@@ -60,7 +60,7 @@ class _hash_encode(Function):
         return outputs
     
     @staticmethod
-    @custom_bwd(device_type='cuda')
+    @custom_bwd
     def backward(ctx, grad):
         
         inputs, embeddings, offsets, per_level_scale, base_resolution, dy_dx = ctx.saved_tensors

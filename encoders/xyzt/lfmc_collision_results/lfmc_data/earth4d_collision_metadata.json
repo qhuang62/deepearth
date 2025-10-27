@@ -1,0 +1,333 @@
+{
+  "earth4d_config": {
+    "spatial_levels": 24,
+    "temporal_levels": 24,
+    "spatial_log2_hashmap_size": 22,
+    "temporal_log2_hashmap_size": 22,
+    "max_tracked_examples": 89961,
+    "tracked_examples": 89961
+  },
+  "coordinate_ranges": {
+    "latitude": [
+      25.996389389038086,
+      65.11638641357422
+    ],
+    "longitude": [
+      -150.62554931640625,
+      -68.25833129882812
+    ],
+    "elevation_m": [
+      14.020999908447266,
+      26872.69140625
+    ],
+    "time_original": [
+      0.20027397572994232,
+      0.8082191944122314
+    ]
+  },
+  "normalized_coordinate_ranges": {
+    "x_normalized": [
+      -0.42794162034988403,
+      0.26431703567504883
+    ],
+    "y_normalized": [
+      -0.888515055179596,
+      -0.2219281792640686
+    ],
+    "z_normalized": [
+      0.43417319655418396,
+      0.9005460143089294
+    ],
+    "time_normalized": [
+      0.20027397572994232,
+      0.8082191944122314
+    ]
+  },
+  "grid_analysis": {
+    "xyz": {
+      "num_levels": 24,
+      "hash_table_size": 4194304,
+      "note": "Collision rates computed during analysis, not stored in export"
+    },
+    "xyt": {
+      "num_levels": 24,
+      "hash_table_size": 4194304,
+      "note": "Collision rates computed during analysis, not stored in export"
+    },
+    "yzt": {
+      "num_levels": 24,
+      "hash_table_size": 4194304,
+      "note": "Collision rates computed during analysis, not stored in export"
+    },
+    "xzt": {
+      "num_levels": 24,
+      "hash_table_size": 4194304,
+      "note": "Collision rates computed during analysis, not stored in export"
+    }
+  },
+  "column_map": {
+    "description": "Column names and their order for reconstructing CSV from PyTorch tensors",
+    "coordinate_columns": {
+      "original": [
+        "latitude",
+        "longitude",
+        "elevation_m",
+        "time_original"
+      ],
+      "normalized": [
+        "x_normalized",
+        "y_normalized",
+        "z_normalized",
+        "time_normalized"
+      ]
+    },
+    "hash_index_columns": {
+      "xyz": [
+        "xyz_level_00_index",
+        "xyz_level_01_index",
+        "xyz_level_02_index",
+        "xyz_level_03_index",
+        "xyz_level_04_index",
+        "xyz_level_05_index",
+        "xyz_level_06_index",
+        "xyz_level_07_index",
+        "xyz_level_08_index",
+        "xyz_level_09_index",
+        "xyz_level_10_index",
+        "xyz_level_11_index",
+        "xyz_level_12_index",
+        "xyz_level_13_index",
+        "xyz_level_14_index",
+        "xyz_level_15_index",
+        "xyz_level_16_index",
+        "xyz_level_17_index",
+        "xyz_level_18_index",
+        "xyz_level_19_index",
+        "xyz_level_20_index",
+        "xyz_level_21_index",
+        "xyz_level_22_index",
+        "xyz_level_23_index"
+      ],
+      "xyt": [
+        "xyt_level_00_index",
+        "xyt_level_01_index",
+        "xyt_level_02_index",
+        "xyt_level_03_index",
+        "xyt_level_04_index",
+        "xyt_level_05_index",
+        "xyt_level_06_index",
+        "xyt_level_07_index",
+        "xyt_level_08_index",
+        "xyt_level_09_index",
+        "xyt_level_10_index",
+        "xyt_level_11_index",
+        "xyt_level_12_index",
+        "xyt_level_13_index",
+        "xyt_level_14_index",
+        "xyt_level_15_index",
+        "xyt_level_16_index",
+        "xyt_level_17_index",
+        "xyt_level_18_index",
+        "xyt_level_19_index",
+        "xyt_level_20_index",
+        "xyt_level_21_index",
+        "xyt_level_22_index",
+        "xyt_level_23_index"
+      ],
+      "yzt": [
+        "yzt_level_00_index",
+        "yzt_level_01_index",
+        "yzt_level_02_index",
+        "yzt_level_03_index",
+        "yzt_level_04_index",
+        "yzt_level_05_index",
+        "yzt_level_06_index",
+        "yzt_level_07_index",
+        "yzt_level_08_index",
+        "yzt_level_09_index",
+        "yzt_level_10_index",
+        "yzt_level_11_index",
+        "yzt_level_12_index",
+        "yzt_level_13_index",
+        "yzt_level_14_index",
+        "yzt_level_15_index",
+        "yzt_level_16_index",
+        "yzt_level_17_index",
+        "yzt_level_18_index",
+        "yzt_level_19_index",
+        "yzt_level_20_index",
+        "yzt_level_21_index",
+        "yzt_level_22_index",
+        "yzt_level_23_index"
+      ],
+      "xzt": [
+        "xzt_level_00_index",
+        "xzt_level_01_index",
+        "xzt_level_02_index",
+        "xzt_level_03_index",
+        "xzt_level_04_index",
+        "xzt_level_05_index",
+        "xzt_level_06_index",
+        "xzt_level_07_index",
+        "xzt_level_08_index",
+        "xzt_level_09_index",
+        "xzt_level_10_index",
+        "xzt_level_11_index",
+        "xzt_level_12_index",
+        "xzt_level_13_index",
+        "xzt_level_14_index",
+        "xzt_level_15_index",
+        "xzt_level_16_index",
+        "xzt_level_17_index",
+        "xzt_level_18_index",
+        "xzt_level_19_index",
+        "xzt_level_20_index",
+        "xzt_level_21_index",
+        "xzt_level_22_index",
+        "xzt_level_23_index"
+      ]
+    },
+    "full_csv_columns": [
+      "latitude",
+      "longitude",
+      "elevation_m",
+      "time_original",
+      "x_normalized",
+      "y_normalized",
+      "z_normalized",
+      "time_normalized",
+      "xyz_level_00_index",
+      "xyz_level_01_index",
+      "xyz_level_02_index",
+      "xyz_level_03_index",
+      "xyz_level_04_index",
+      "xyz_level_05_index",
+      "xyz_level_06_index",
+      "xyz_level_07_index",
+      "xyz_level_08_index",
+      "xyz_level_09_index",
+      "xyz_level_10_index",
+      "xyz_level_11_index",
+      "xyz_level_12_index",
+      "xyz_level_13_index",
+      "xyz_level_14_index",
+      "xyz_level_15_index",
+      "xyz_level_16_index",
+      "xyz_level_17_index",
+      "xyz_level_18_index",
+      "xyz_level_19_index",
+      "xyz_level_20_index",
+      "xyz_level_21_index",
+      "xyz_level_22_index",
+      "xyz_level_23_index",
+      "xyt_level_00_index",
+      "xyt_level_01_index",
+      "xyt_level_02_index",
+      "xyt_level_03_index",
+      "xyt_level_04_index",
+      "xyt_level_05_index",
+      "xyt_level_06_index",
+      "xyt_level_07_index",
+      "xyt_level_08_index",
+      "xyt_level_09_index",
+      "xyt_level_10_index",
+      "xyt_level_11_index",
+      "xyt_level_12_index",
+      "xyt_level_13_index",
+      "xyt_level_14_index",
+      "xyt_level_15_index",
+      "xyt_level_16_index",
+      "xyt_level_17_index",
+      "xyt_level_18_index",
+      "xyt_level_19_index",
+      "xyt_level_20_index",
+      "xyt_level_21_index",
+      "xyt_level_22_index",
+      "xyt_level_23_index",
+      "yzt_level_00_index",
+      "yzt_level_01_index",
+      "yzt_level_02_index",
+      "yzt_level_03_index",
+      "yzt_level_04_index",
+      "yzt_level_05_index",
+      "yzt_level_06_index",
+      "yzt_level_07_index",
+      "yzt_level_08_index",
+      "yzt_level_09_index",
+      "yzt_level_10_index",
+      "yzt_level_11_index",
+      "yzt_level_12_index",
+      "yzt_level_13_index",
+      "yzt_level_14_index",
+      "yzt_level_15_index",
+      "yzt_level_16_index",
+      "yzt_level_17_index",
+      "yzt_level_18_index",
+      "yzt_level_19_index",
+      "yzt_level_20_index",
+      "yzt_level_21_index",
+      "yzt_level_22_index",
+      "yzt_level_23_index",
+      "xzt_level_00_index",
+      "xzt_level_01_index",
+      "xzt_level_02_index",
+      "xzt_level_03_index",
+      "xzt_level_04_index",
+      "xzt_level_05_index",
+      "xzt_level_06_index",
+      "xzt_level_07_index",
+      "xzt_level_08_index",
+      "xzt_level_09_index",
+      "xzt_level_10_index",
+      "xzt_level_11_index",
+      "xzt_level_12_index",
+      "xzt_level_13_index",
+      "xzt_level_14_index",
+      "xzt_level_15_index",
+      "xzt_level_16_index",
+      "xzt_level_17_index",
+      "xzt_level_18_index",
+      "xzt_level_19_index",
+      "xzt_level_20_index",
+      "xzt_level_21_index",
+      "xzt_level_22_index",
+      "xzt_level_23_index"
+    ],
+    "total_columns": 104
+  },
+  "export_format": "pt",
+  "reconstruction_guide": {
+    "description": "How to reconstruct full CSV from .pt file using column_map",
+    "steps": [
+      "1. Load collision_data.pt with torch.load()",
+      "2. Extract coordinates['original'] and coordinates['normalized'] tensors",
+      "3. Extract hash_indices for each grid (xyz, xyt, yzt, xzt)",
+      "4. Create DataFrame columns in order specified by column_map['full_csv_columns']",
+      "5. Use column_map['hash_index_columns'][grid] for each grid's level naming"
+    ]
+  },
+  "test": {
+    "test_name": "lfmc_real_data",
+    "description": "Real LFMC globe dataset (89,961 samples)",
+    "spatial_distribution": "CONUS + global sites",
+    "temporal_distribution": "2015-2025 range",
+    "unique_species": 182,
+    "lat_range": [
+      25.9963889,
+      65.1163889
+    ],
+    "lon_range": [
+      -150.6255556,
+      -68.2583333
+    ],
+    "elev_range": [
+      14.021,
+      26872.692
+    ],
+    "time_range": [
+      0.20027397260273574,
+      0.8082191780821859
+    ],
+    "expected_collision_behavior": "Real-world spatiotemporal clustering patterns"
+  }
+}

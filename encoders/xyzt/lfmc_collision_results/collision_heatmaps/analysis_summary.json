@@ -1,0 +1,791 @@
+{
+  "single_level_stats": [
+    {
+      "total_points": 89961,
+      "unique_hashes": 815,
+      "collision_rate": 0.9909405186692011,
+      "max_collisions": 2655,
+      "nonzero_cells": 815,
+      "total_cells": 4000000,
+      "sparsity": 0.99979625,
+      "grid": "xyz",
+      "mode": "log_quantile+smoothing",
+      "nonzero": 815
+    },
+    {
+      "total_points": 89961,
+      "unique_hashes": 33005,
+      "collision_rate": 0.6331187959226776,
+      "max_collisions": 614,
+      "nonzero_cells": 31405,
+      "total_cells": 4000000,
+      "sparsity": 0.99214875,
+      "grid": "xyt",
+      "mode": "log_quantile+smoothing",
+      "nonzero": 31405
+    },
+    {
+      "total_points": 89961,
+      "unique_hashes": 30107,
+      "collision_rate": 0.6653327553050766,
+      "max_collisions": 614,
+      "nonzero_cells": 28723,
+      "total_cells": 4000000,
+      "sparsity": 0.99281925,
+      "grid": "yzt",
+      "mode": "log_quantile+smoothing",
+      "nonzero": 28723
+    },
+    {
+      "total_points": 89961,
+      "unique_hashes": 34167,
+      "collision_rate": 0.6202020875712809,
+      "max_collisions": 614,
+      "nonzero_cells": 32612,
+      "total_cells": 4000000,
+      "sparsity": 0.991847,
+      "grid": "xzt",
+      "mode": "log_quantile+smoothing",
+      "nonzero": 32612
+    }
+  ],
+  "multilevel_stats": {
+    "level_0": [
+      {
+        "grid": "xyz",
+        "level": 0,
+        "collision_rate": 0.9993441602472183,
+        "unique_hashes": 59
+      },
+      {
+        "grid": "xyt",
+        "level": 0,
+        "collision_rate": 0.9949756005380109,
+        "unique_hashes": 452
+      },
+      {
+        "grid": "yzt",
+        "level": 0,
+        "collision_rate": 0.9968986560843032,
+        "unique_hashes": 279
+      },
+      {
+        "grid": "xzt",
+        "level": 0,
+        "collision_rate": 0.9946977023376796,
+        "unique_hashes": 477
+      }
+    ],
+    "level_1": [
+      {
+        "grid": "xyz",
+        "level": 1,
+        "collision_rate": 0.998354842654039,
+        "unique_hashes": 148
+      },
+      {
+        "grid": "xyt",
+        "level": 1,
+        "collision_rate": 0.9783350563021754,
+        "unique_hashes": 1949
+      },
+      {
+        "grid": "yzt",
+        "level": 1,
+        "collision_rate": 0.9869165527284045,
+        "unique_hashes": 1177
+      },
+      {
+        "grid": "xzt",
+        "level": 1,
+        "collision_rate": 0.9758562043552206,
+        "unique_hashes": 2172
+      }
+    ],
+    "level_2": [
+      {
+        "grid": "xyz",
+        "level": 2,
+        "collision_rate": 0.9963095118996009,
+        "unique_hashes": 332
+      },
+      {
+        "grid": "xyt",
+        "level": 2,
+        "collision_rate": 0.908026811618368,
+        "unique_hashes": 8274
+      },
+      {
+        "grid": "yzt",
+        "level": 2,
+        "collision_rate": 0.9419415079867943,
+        "unique_hashes": 5223
+      },
+      {
+        "grid": "xzt",
+        "level": 2,
+        "collision_rate": 0.9022354131234646,
+        "unique_hashes": 8795
+      }
+    ],
+    "level_3": [
+      {
+        "grid": "xyz",
+        "level": 3,
+        "collision_rate": 0.9933415591200632,
+        "unique_hashes": 599
+      },
+      {
+        "grid": "xyt",
+        "level": 3,
+        "collision_rate": 0.7593735062971733,
+        "unique_hashes": 21647
+      },
+      {
+        "grid": "yzt",
+        "level": 3,
+        "collision_rate": 0.8121630484320983,
+        "unique_hashes": 16898
+      },
+      {
+        "grid": "xzt",
+        "level": 3,
+        "collision_rate": 0.7484687809161747,
+        "unique_hashes": 22628
+      }
+    ],
+    "level_4": [
+      {
+        "grid": "xyz",
+        "level": 4,
+        "collision_rate": 0.9909405186692011,
+        "unique_hashes": 815
+      },
+      {
+        "grid": "xyt",
+        "level": 4,
+        "collision_rate": 0.6331187959226776,
+        "unique_hashes": 33005
+      },
+      {
+        "grid": "yzt",
+        "level": 4,
+        "collision_rate": 0.6653327553050766,
+        "unique_hashes": 30107
+      },
+      {
+        "grid": "xzt",
+        "level": 4,
+        "collision_rate": 0.6202020875712809,
+        "unique_hashes": 34167
+      }
+    ],
+    "level_5": [
+      {
+        "grid": "xyz",
+        "level": 5,
+        "collision_rate": 0.9896288391636375,
+        "unique_hashes": 933
+      },
+      {
+        "grid": "xyt",
+        "level": 5,
+        "collision_rate": 0.5826080190304688,
+        "unique_hashes": 37549
+      },
+      {
+        "grid": "yzt",
+        "level": 5,
+        "collision_rate": 0.5964806971910049,
+        "unique_hashes": 36301
+      },
+      {
+        "grid": "xzt",
+        "level": 5,
+        "collision_rate": 0.5755938684541079,
+        "unique_hashes": 38180
+      }
+    ],
+    "level_6": [
+      {
+        "grid": "xyz",
+        "level": 6,
+        "collision_rate": 0.9889618834828425,
+        "unique_hashes": 993
+      },
+      {
+        "grid": "xyt",
+        "level": 6,
+        "collision_rate": 0.5584753393137026,
+        "unique_hashes": 39720
+      },
+      {
+        "grid": "yzt",
+        "level": 6,
+        "collision_rate": 0.5676237480686075,
+        "unique_hashes": 38897
+      },
+      {
+        "grid": "xzt",
+        "level": 6,
+        "collision_rate": 0.5569524571758874,
+        "unique_hashes": 39857
+      }
+    ],
+    "level_7": [
+      {
+        "grid": "xyz",
+        "level": 7,
+        "collision_rate": 0.9887506808505908,
+        "unique_hashes": 1012
+      },
+      {
+        "grid": "xyt",
+        "level": 7,
+        "collision_rate": 0.548270917397539,
+        "unique_hashes": 40638
+      },
+      {
+        "grid": "yzt",
+        "level": 7,
+        "collision_rate": 0.5538622291882038,
+        "unique_hashes": 40135
+      },
+      {
+        "grid": "xzt",
+        "level": 7,
+        "collision_rate": 0.5498827269594602,
+        "unique_hashes": 40493
+      }
+    ],
+    "level_8": [
+      {
+        "grid": "xyz",
+        "level": 8,
+        "collision_rate": 0.9886839852825113,
+        "unique_hashes": 1018
+      },
+      {
+        "grid": "xyt",
+        "level": 8,
+        "collision_rate": 0.5482486855415124,
+        "unique_hashes": 40640
+      },
+      {
+        "grid": "yzt",
+        "level": 8,
+        "collision_rate": 0.5495159013350229,
+        "unique_hashes": 40526
+      },
+      {
+        "grid": "xzt",
+        "level": 8,
+        "collision_rate": 0.5474594546525716,
+        "unique_hashes": 40711
+      }
+    ],
+    "level_9": [
+      {
+        "grid": "xyz",
+        "level": 9,
+        "collision_rate": 0.9885728260023788,
+        "unique_hashes": 1028
+      },
+      {
+        "grid": "xyt",
+        "level": 9,
+        "collision_rate": 0.5470592812440946,
+        "unique_hashes": 40747
+      },
+      {
+        "grid": "yzt",
+        "level": 9,
+        "collision_rate": 0.5474372227965452,
+        "unique_hashes": 40713
+      },
+      {
+        "grid": "xzt",
+        "level": 9,
+        "collision_rate": 0.5463033981391936,
+        "unique_hashes": 40815
+      }
+    ],
+    "level_10": [
+      {
+        "grid": "xyz",
+        "level": 10,
+        "collision_rate": 0.9885394782183391,
+        "unique_hashes": 1031
+      },
+      {
+        "grid": "xyt",
+        "level": 10,
+        "collision_rate": 0.5448805593534977,
+        "unique_hashes": 40943
+      },
+      {
+        "grid": "yzt",
+        "level": 10,
+        "collision_rate": 0.5448472115694579,
+        "unique_hashes": 40946
+      },
+      {
+        "grid": "xzt",
+        "level": 10,
+        "collision_rate": 0.5459254565867432,
+        "unique_hashes": 40849
+      }
+    ],
+    "level_11": [
+      {
+        "grid": "xyz",
+        "level": 11,
+        "collision_rate": 0.9885172463623125,
+        "unique_hashes": 1033
+      },
+      {
+        "grid": "xyt",
+        "level": 11,
+        "collision_rate": 0.5447471682173386,
+        "unique_hashes": 40955
+      },
+      {
+        "grid": "yzt",
+        "level": 11,
+        "collision_rate": 0.5445026178010471,
+        "unique_hashes": 40977
+      },
+      {
+        "grid": "xzt",
+        "level": 11,
+        "collision_rate": 0.5445248496570736,
+        "unique_hashes": 40975
+      }
+    ],
+    "level_12": [
+      {
+        "grid": "xyz",
+        "level": 12,
+        "collision_rate": 0.9885061304342994,
+        "unique_hashes": 1034
+      },
+      {
+        "grid": "xyt",
+        "level": 12,
+        "collision_rate": 0.5445470815131002,
+        "unique_hashes": 40973
+      },
+      {
+        "grid": "yzt",
+        "level": 12,
+        "collision_rate": 0.5441246762485966,
+        "unique_hashes": 41011
+      },
+      {
+        "grid": "xzt",
+        "level": 12,
+        "collision_rate": 0.5449806027056169,
+        "unique_hashes": 40934
+      }
+    ],
+    "level_13": [
+      {
+        "grid": "xyz",
+        "level": 13,
+        "collision_rate": 0.9884838985782728,
+        "unique_hashes": 1036
+      },
+      {
+        "grid": "xyt",
+        "level": 13,
+        "collision_rate": 0.5437022709840931,
+        "unique_hashes": 41049
+      },
+      {
+        "grid": "yzt",
+        "level": 13,
+        "collision_rate": 0.5438690099042919,
+        "unique_hashes": 41034
+      },
+      {
+        "grid": "xzt",
+        "level": 13,
+        "collision_rate": 0.5440579806805171,
+        "unique_hashes": 41017
+      }
+    ],
+    "level_14": [
+      {
+        "grid": "xyz",
+        "level": 14,
+        "collision_rate": 0.9884838985782728,
+        "unique_hashes": 1036
+      },
+      {
+        "grid": "xyt",
+        "level": 14,
+        "collision_rate": 0.5439801691844244,
+        "unique_hashes": 41024
+      },
+      {
+        "grid": "yzt",
+        "level": 14,
+        "collision_rate": 0.5436800391280666,
+        "unique_hashes": 41051
+      },
+      {
+        "grid": "xzt",
+        "level": 14,
+        "collision_rate": 0.5435021842798546,
+        "unique_hashes": 41067
+      }
+    ],
+    "level_15": [
+      {
+        "grid": "xyz",
+        "level": 15,
+        "collision_rate": 0.9884727826502595,
+        "unique_hashes": 1037
+      },
+      {
+        "grid": "xyt",
+        "level": 15,
+        "collision_rate": 0.5438245461922389,
+        "unique_hashes": 41038
+      },
+      {
+        "grid": "yzt",
+        "level": 15,
+        "collision_rate": 0.5434910683518414,
+        "unique_hashes": 41068
+      },
+      {
+        "grid": "xzt",
+        "level": 15,
+        "collision_rate": 0.5437800824801858,
+        "unique_hashes": 41042
+      }
+    ],
+    "level_16": [
+      {
+        "grid": "xyz",
+        "level": 16,
+        "collision_rate": 0.9884727826502595,
+        "unique_hashes": 1037
+      },
+      {
+        "grid": "xyt",
+        "level": 16,
+        "collision_rate": 0.5435355320638944,
+        "unique_hashes": 41064
+      },
+      {
+        "grid": "yzt",
+        "level": 16,
+        "collision_rate": 0.5433687931436956,
+        "unique_hashes": 41079
+      },
+      {
+        "grid": "xzt",
+        "level": 16,
+        "collision_rate": 0.5436244594880003,
+        "unique_hashes": 41056
+      }
+    ],
+    "level_17": [
+      {
+        "grid": "xyz",
+        "level": 17,
+        "collision_rate": 0.9884727826502595,
+        "unique_hashes": 1037
+      },
+      {
+        "grid": "xyt",
+        "level": 17,
+        "collision_rate": 0.5433243294316425,
+        "unique_hashes": 41083
+      },
+      {
+        "grid": "yzt",
+        "level": 17,
+        "collision_rate": 0.5433799090717089,
+        "unique_hashes": 41078
+      },
+      {
+        "grid": "xzt",
+        "level": 17,
+        "collision_rate": 0.5436466913440269,
+        "unique_hashes": 41054
+      }
+    ],
+    "level_18": [
+      {
+        "grid": "xyz",
+        "level": 18,
+        "collision_rate": 0.9884838985782728,
+        "unique_hashes": 1036
+      },
+      {
+        "grid": "xyt",
+        "level": 18,
+        "collision_rate": 0.5436355754160136,
+        "unique_hashes": 41055
+      },
+      {
+        "grid": "yzt",
+        "level": 18,
+        "collision_rate": 0.5437467346961461,
+        "unique_hashes": 41045
+      },
+      {
+        "grid": "xzt",
+        "level": 18,
+        "collision_rate": 0.5438912417603183,
+        "unique_hashes": 41032
+      }
+    ],
+    "level_19": [
+      {
+        "grid": "xyz",
+        "level": 19,
+        "collision_rate": 0.9884727826502595,
+        "unique_hashes": 1037
+      },
+      {
+        "grid": "xyt",
+        "level": 19,
+        "collision_rate": 0.5433576772156824,
+        "unique_hashes": 41080
+      },
+      {
+        "grid": "yzt",
+        "level": 19,
+        "collision_rate": 0.5435466479919075,
+        "unique_hashes": 41063
+      },
+      {
+        "grid": "xzt",
+        "level": 19,
+        "collision_rate": 0.5434799524238281,
+        "unique_hashes": 41069
+      }
+    ],
+    "level_20": [
+      {
+        "grid": "xyz",
+        "level": 20,
+        "collision_rate": 0.9884727826502595,
+        "unique_hashes": 1037
+      },
+      {
+        "grid": "xyt",
+        "level": 20,
+        "collision_rate": 0.554762619357277,
+        "unique_hashes": 40054
+      },
+      {
+        "grid": "yzt",
+        "level": 20,
+        "collision_rate": 0.5548181989973433,
+        "unique_hashes": 40049
+      },
+      {
+        "grid": "xzt",
+        "level": 20,
+        "collision_rate": 0.554851546781383,
+        "unique_hashes": 40046
+      }
+    ],
+    "level_21": [
+      {
+        "grid": "xyz",
+        "level": 21,
+        "collision_rate": 0.9884727826502595,
+        "unique_hashes": 1037
+      },
+      {
+        "grid": "xyt",
+        "level": 21,
+        "collision_rate": 0.5871322017318615,
+        "unique_hashes": 37142
+      },
+      {
+        "grid": "yzt",
+        "level": 21,
+        "collision_rate": 0.5873545202921265,
+        "unique_hashes": 37122
+      },
+      {
+        "grid": "xzt",
+        "level": 21,
+        "collision_rate": 0.5871099698758351,
+        "unique_hashes": 37144
+      }
+    ],
+    "level_22": [
+      {
+        "grid": "xyz",
+        "level": 22,
+        "collision_rate": 0.9884727826502595,
+        "unique_hashes": 1037
+      },
+      {
+        "grid": "xyt",
+        "level": 22,
+        "collision_rate": 0.5846755816409333,
+        "unique_hashes": 37363
+      },
+      {
+        "grid": "yzt",
+        "level": 22,
+        "collision_rate": 0.5848534364891453,
+        "unique_hashes": 37347
+      },
+      {
+        "grid": "xzt",
+        "level": 22,
+        "collision_rate": 0.5849312479852381,
+        "unique_hashes": 37340
+      }
+    ],
+    "level_23": [
+      {
+        "grid": "xyz",
+        "level": 23,
+        "collision_rate": 0.9884727826502595,
+        "unique_hashes": 1037
+      },
+      {
+        "grid": "xyt",
+        "level": 23,
+        "collision_rate": 0.5876101866364314,
+        "unique_hashes": 37099
+      },
+      {
+        "grid": "yzt",
+        "level": 23,
+        "collision_rate": 0.5875879547804048,
+        "unique_hashes": 37101
+      },
+      {
+        "grid": "xzt",
+        "level": 23,
+        "collision_rate": 0.5877991574126566,
+        "unique_hashes": 37082
+      }
+    ]
+  },
+  "detailed_paths": {
+    "xyz": [
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_00_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_01_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_02_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_03_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_04_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_05_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_06_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_07_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_08_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_09_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_10_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_11_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_12_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_13_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_14_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_15_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_16_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_17_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_18_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_19_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_20_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_21_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_22_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyz/xyz_level_23_comparison.png"
+    ],
+    "xyt": [
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_00_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_01_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_02_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_03_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_04_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_05_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_06_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_07_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_08_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_09_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_10_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_11_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_12_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_13_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_14_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_15_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_16_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_17_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_18_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_19_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_20_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_21_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_22_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xyt/xyt_level_23_comparison.png"
+    ],
+    "yzt": [
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_00_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_01_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_02_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_03_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_04_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_05_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_06_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_07_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_08_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_09_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_10_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_11_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_12_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_13_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_14_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_15_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_16_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_17_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_18_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_19_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_20_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_21_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_22_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/yzt/yzt_level_23_comparison.png"
+    ],
+    "xzt": [
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_00_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_01_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_02_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_03_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_04_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_05_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_06_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_07_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_08_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_09_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_10_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_11_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_12_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_13_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_14_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_15_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_16_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_17_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_18_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_19_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_20_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_21_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_22_comparison.png",
+      "/home/qhuang62/deepearth/encoders/xyzt/lfmc_collision_results/collision_heatmaps/detailed/xzt/xzt_level_23_comparison.png"
+    ]
+  },
+  "params": {
+    "grid_size": 2000,
+    "smoothing": 1.5,
+    "scaling": "log_quantile",
+    "preview": false,
+    "shared_colorbar": false
+  }
+}

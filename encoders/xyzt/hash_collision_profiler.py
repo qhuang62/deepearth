@@ -303,6 +303,75 @@ class SpatiotemporalPointGenerator:
 
         return lat, lon, elev, time, metadata
 
+    def load_lfmc_data(self, lfmc_path, max_samples=None):
+        """Load real LFMC data for collision testing."""
+        import pandas as pd
+        
+        print(f"Loading LFMC data from {lfmc_path}")
+        
+        # Load data
+        df = pd.read_csv(lfmc_path)
+        df.columns = ['lat', 'lon', 'elev', 'date_str', 'time_str', 'lfmc', 'species']
+        
+        print(f"Raw data: {len(df):,} records")
+        
+        # Filter valid data
+        df = df[(df['lfmc'] >= 0) & (df['lfmc'] <= 600) &
+                df['lat'].notna() & df['lon'].notna() &
+                df['elev'].notna()].copy()
+        
+        print(f"After filtering: {len(df):,} records")
+        
+        # Limit samples if requested
+        if max_samples and len(df) > max_samples:
+            df = df.sample(n=max_samples, random_state=42).copy()
+            print(f"Sampled down to: {len(df):,} records for analysis")
+        
+        # Parse dates to normalized time [0, 1]
+        date_floats = np.zeros(len(df))
+        for i, d in enumerate(df['date_str'].values):
+            d = str(d)
+            if len(d) == 8:
+                year = int(d[:4])
+                month = int(d[4:6])
+                day = int(d[6:8])
+                date_floats[i] = year + (month - 1) / 12.0 + day / 365.0
+            else:
+                date_floats[i] = 2020.0
+        
+        # Normalize time to [0, 1] for 2015-2025 range
+        time_norm = (date_floats - 2015) / 10.0
+        time_norm = np.clip(time_norm, 0, 1)
+        
+        # Get coordinate arrays with float64 precision (team lead's requirement)
+        lat = df['lat'].values.astype(np.float64)
+        lon = df['lon'].values.astype(np.float64)
+        elev = df['elev'].values.astype(np.float64)
+        time = time_norm.astype(np.float64)
+        
+        # Create metadata for this real dataset
+        metadata = {
+            'test_name': 'lfmc_real_data',
+            'description': f'Real LFMC globe dataset ({len(df):,} samples)',
+            'spatial_distribution': 'CONUS + global sites',
+            'temporal_distribution': '2015-2025 range',
+            'unique_species': df['species'].nunique(),
+            'lat_range': [lat.min(), lat.max()],
+            'lon_range': [lon.min(), lon.max()],
+            'elev_range': [elev.min(), elev.max()],
+            'time_range': [time.min(), time.max()],
+            'expected_collision_behavior': 'Real-world spatiotemporal clustering patterns'
+        }
+        
+        print(f"Coordinate ranges:")
+        print(f"  Latitude: [{lat.min():.4f}, {lat.max():.4f}]")
+        print(f"  Longitude: [{lon.min():.4f}, {lon.max():.4f}]")
+        print(f"  Elevation: [{elev.min():.1f}m, {elev.max():.1f}m]")
+        print(f"  Time (norm): [{time.min():.4f}, {time.max():.4f}]")
+        print(f"  Unique species: {metadata['unique_species']}")
+        
+        return lat, lon, elev, time, metadata
+
 
 def profile_collisions(coords, test_metadata, output_base_dir, spatial_levels=24, temporal_levels=24,
                       spatial_log2_hashmap_size=22, temporal_log2_hashmap_size=22):
@@ -634,6 +703,38 @@ def profile_collisions(coords, test_metadata, output_base_dir, spatial_levels=24
     return summary
 
 
+def run_lfmc_analysis(lfmc_path, output_dir="lfmc_collision_analysis", max_samples=None):
+    """Run collision analysis on real LFMC data."""
+    print("="*80)
+    print("LFMC HASH COLLISION ANALYSIS")
+    print("="*80)
+    
+    # Load LFMC data
+    generator = SpatiotemporalPointGenerator(n_points=1000000)  # dummy size
+    lat, lon, elev, time, metadata = generator.load_lfmc_data(lfmc_path, max_samples)
+    
+    # Stack coordinates with float64 precision
+    coords = torch.stack([
+        torch.tensor(lat, dtype=torch.float64),
+        torch.tensor(lon, dtype=torch.float64), 
+        torch.tensor(elev, dtype=torch.float64),
+        torch.tensor(time, dtype=torch.float64)
+    ], dim=1)
+    
+    print(f"\nLFMC dataset loaded: {coords.shape}")
+    
+    # Run collision analysis
+    summary = profile_collisions(coords, metadata, output_dir)
+    
+    print(f"\n" + "="*80)
+    print("LFMC COLLISION ANALYSIS COMPLETED")
+    print("="*80)
+    print(f"✅ Processed {len(coords):,} real LFMC samples")
+    print(f"✅ Results saved to: {output_dir}")
+    
+    return summary
+
+
 def run_synthetic_tests(output_dir="hash_collision_tests", n_points=1_000_000):
     """Run all synthetic collision tests."""
     print("\n" + "="*80)
@@ -694,7 +795,20 @@ if __name__ == "__main__":
                        help='Number of points per test (default: 1000000)')
     parser.add_argument('--output-dir', type=str, default='hash_collision_tests',
                        help='Output directory for test results')
+    parser.add_argument('--lfmc-data', type=str, default=None,
+                       help='Path to LFMC CSV file for real data analysis')
+    parser.add_argument('--max-samples', type=int, default=None,
+                       help='Maximum number of LFMC samples to process')
 
     args = parser.parse_args()
 
-    run_synthetic_tests(output_dir=args.output_dir, n_points=args.n_points)
+    if args.lfmc_data:
+        # Run LFMC analysis
+        run_lfmc_analysis(
+            lfmc_path=args.lfmc_data,
+            output_dir=args.output_dir,
+            max_samples=args.max_samples
+        )
+    else:
+        # Run synthetic tests
+        run_synthetic_tests(output_dir=args.output_dir, n_points=args.n_points)

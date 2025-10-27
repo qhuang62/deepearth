@@ -1,0 +1,265 @@
+{
+  "coordinate_analysis": {
+    "x_range": [
+      -0.42794162034988403,
+      0.26431703567504883
+    ],
+    "y_range": [
+      -0.888515055179596,
+      -0.2219281792640686
+    ],
+    "z_range": [
+      0.43417319655418396,
+      0.9005460143089294
+    ],
+    "temporal_range": [
+      0.20027397572994232,
+      0.8082191944122314
+    ],
+    "total_points": 89961,
+    "temporal_span_years": 121.58904373645782,
+    "estimated_density_points_per_unit": 3437.9649749793084
+  },
+  "hash_table_scaling": {
+    "xyz": [
+      {
+        "hash_bits": 16,
+        "table_size": 65536,
+        "unique_hashes": 810,
+        "collision_rate": 0.9909960983092674,
+        "utilization_percent": 1.2359619140625
+      },
+      {
+        "hash_bits": 18,
+        "table_size": 262144,
+        "unique_hashes": 814,
+        "collision_rate": 0.9909516345972144,
+        "utilization_percent": 0.310516357421875
+      },
+      {
+        "hash_bits": 20,
+        "table_size": 1048576,
+        "unique_hashes": 814,
+        "collision_rate": 0.9909516345972144,
+        "utilization_percent": 0.07762908935546875
+      },
+      {
+        "hash_bits": 21,
+        "table_size": 2097152,
+        "unique_hashes": 815,
+        "collision_rate": 0.9909405186692011,
+        "utilization_percent": 0.03886222839355469
+      },
+      {
+        "hash_bits": 22,
+        "table_size": 4194304,
+        "unique_hashes": 815,
+        "collision_rate": 0.9909405186692011,
+        "utilization_percent": 0.019431114196777344
+      },
+      {
+        "hash_bits": 23,
+        "table_size": 8388608,
+        "unique_hashes": 815,
+        "collision_rate": 0.9909405186692011,
+        "utilization_percent": 0.009715557098388672
+      }
+    ],
+    "xyt": [
+      {
+        "hash_bits": 16,
+        "table_size": 65536,
+        "unique_hashes": 25887,
+        "collision_rate": 0.7122419715209924,
+        "utilization_percent": 39.50042724609375
+      },
+      {
+        "hash_bits": 18,
+        "table_size": 262144,
+        "unique_hashes": 31136,
+        "collision_rate": 0.6538944653794422,
+        "utilization_percent": 11.87744140625
+      },
+      {
+        "hash_bits": 20,
+        "table_size": 1048576,
+        "unique_hashes": 32644,
+        "collision_rate": 0.6371316459354609,
+        "utilization_percent": 3.1131744384765625
+      },
+      {
+        "hash_bits": 21,
+        "table_size": 2097152,
+        "unique_hashes": 32892,
+        "collision_rate": 0.6343748957881749,
+        "utilization_percent": 1.5684127807617188
+      },
+      {
+        "hash_bits": 22,
+        "table_size": 4194304,
+        "unique_hashes": 33005,
+        "collision_rate": 0.6331187959226776,
+        "utilization_percent": 0.786900520324707
+      },
+      {
+        "hash_bits": 23,
+        "table_size": 8388608,
+        "unique_hashes": 33005,
+        "collision_rate": 0.6331187959226776,
+        "utilization_percent": 0.3934502601623535
+      }
+    ],
+    "yzt": [
+      {
+        "hash_bits": 16,
+        "table_size": 65536,
+        "unique_hashes": 24240,
+        "collision_rate": 0.7305499049588154,
+        "utilization_percent": 36.9873046875
+      },
+      {
+        "hash_bits": 18,
+        "table_size": 262144,
+        "unique_hashes": 28577,
+        "collision_rate": 0.6823401251653495,
+        "utilization_percent": 10.901260375976562
+      },
+      {
+        "hash_bits": 20,
+        "table_size": 1048576,
+        "unique_hashes": 29808,
+        "collision_rate": 0.6686564177810385,
+        "utilization_percent": 2.84271240234375
+      },
+      {
+        "hash_bits": 21,
+        "table_size": 2097152,
+        "unique_hashes": 30001,
+        "collision_rate": 0.6665110436744812,
+        "utilization_percent": 1.4305591583251953
+      },
+      {
+        "hash_bits": 22,
+        "table_size": 4194304,
+        "unique_hashes": 30107,
+        "collision_rate": 0.6653327553050766,
+        "utilization_percent": 0.7178068161010742
+      },
+      {
+        "hash_bits": 23,
+        "table_size": 8388608,
+        "unique_hashes": 30107,
+        "collision_rate": 0.6653327553050766,
+        "utilization_percent": 0.3589034080505371
+      }
+    ],
+    "xzt": [
+      {
+        "hash_bits": 16,
+        "table_size": 65536,
+        "unique_hashes": 26691,
+        "collision_rate": 0.7033047653983393,
+        "utilization_percent": 40.72723388671875
+      },
+      {
+        "hash_bits": 18,
+        "table_size": 262144,
+        "unique_hashes": 32305,
+        "collision_rate": 0.6408999455319527,
+        "utilization_percent": 12.323379516601562
+      },
+      {
+        "hash_bits": 20,
+        "table_size": 1048576,
+        "unique_hashes": 33805,
+        "collision_rate": 0.6242260535120775,
+        "utilization_percent": 3.223896026611328
+      },
+      {
+        "hash_bits": 21,
+        "table_size": 2097152,
+        "unique_hashes": 34053,
+        "collision_rate": 0.6214693033647914,
+        "utilization_percent": 1.6237735748291016
+      },
+      {
+        "hash_bits": 22,
+        "table_size": 4194304,
+        "unique_hashes": 34167,
+        "collision_rate": 0.6202020875712809,
+        "utilization_percent": 0.8146047592163086
+      },
+      {
+        "hash_bits": 23,
+        "table_size": 8388608,
+        "unique_hashes": 34167,
+        "collision_rate": 0.6202020875712809,
+        "utilization_percent": 0.4073023796081543
+      }
+    ]
+  },
+  "level_4_distributions": {
+    "xyz": {
+      "grid": "xyz",
+      "level": 4,
+      "total_points": 89961,
+      "unique_hashes": 815,
+      "hash_table_size": 4194304,
+      "utilization_percent": 0.019431114196777344,
+      "max_activations": 2655,
+      "mean_activations": 110.38159509202454,
+      "std_activations": 127.9047494713663,
+      "activation_p50": 83.0,
+      "activation_p90": 228.0,
+      "activation_p99": 438.9000000000002
+    },
+    "xyt": {
+      "grid": "xyt",
+      "level": 4,
+      "total_points": 89961,
+      "unique_hashes": 33005,
+      "hash_table_size": 4194304,
+      "utilization_percent": 0.786900520324707,
+      "max_activations": 614,
+      "mean_activations": 2.7256779275867293,
+      "std_activations": 5.646282996691411,
+      "activation_p50": 2.0,
+      "activation_p90": 5.0,
+      "activation_p99": 8.0
+    },
+    "yzt": {
+      "grid": "yzt",
+      "level": 4,
+      "total_points": 89961,
+      "unique_hashes": 30107,
+      "hash_table_size": 4194304,
+      "utilization_percent": 0.7178068161010742,
+      "max_activations": 614,
+      "mean_activations": 2.9880426478891953,
+      "std_activations": 5.975047191269386,
+      "activation_p50": 2.0,
+      "activation_p90": 6.0,
+      "activation_p99": 10.0
+    },
+    "xzt": {
+      "grid": "xzt",
+      "level": 4,
+      "total_points": 89961,
+      "unique_hashes": 34167,
+      "hash_table_size": 4194304,
+      "utilization_percent": 0.8146047592163086,
+      "max_activations": 614,
+      "mean_activations": 2.6329791904469224,
+      "std_activations": 5.520162780338905,
+      "activation_p50": 2.0,
+      "activation_p90": 4.0,
+      "activation_p99": 8.0
+    }
+  },
+  "summary_insights": {
+    "spatial_clustering": "Severe spatial clustering due to CONUS-only coverage",
+    "temporal_span": "121.6 years (limited vs 200-year capacity)",
+    "hash_utilization": "Extremely low hash table utilization suggests smaller tables needed",
+    "point_density": "High local density but very sparse global coverage"
+  }
+}
